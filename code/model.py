@@ -284,5 +284,6 @@ test_data['status_group'] = label_code.inverse_transform(pred_rf_test)
 ### write output
 submission = pd.read_csv('data/raw/Submission_format.csv', index_col=0)
 for idx in submission.index:
-    submission[idx,'status_group'] = test_data[idx, 'status_group']
+    submission.loc[idx,'status_group'] = test_data.loc[idx, 'status_group']
+### 0.8084 submitted
 
